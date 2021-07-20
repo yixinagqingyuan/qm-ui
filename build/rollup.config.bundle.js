@@ -36,7 +36,8 @@ export default [
       esbuild(),
     ],
     external(id) {
-      return /^vue/.test(id);
+      console.log(id, /^vue/.test(id))
+      return /^vue$/.test(id);
     },
   },
 ];
