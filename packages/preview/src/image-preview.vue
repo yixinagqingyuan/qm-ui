@@ -1,11 +1,11 @@
 <template>
-  <transition @after-leave="handleAfterLeave">
-    <div>aaaa</div>
-    天天形象上
-  </transition>
+	<transition>
+		<div>aaaa</div>
+		天天向上
+	</transition>
 </template>
 <script>
-export default {};
+	export default {};
 </script>
 <style>
 </style>
