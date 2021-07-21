@@ -16,7 +16,7 @@ export default [
     output: {
       format: isEsm ? 'es' : 'iife',
       file: isEsm ? 'lib/index.esm.js' : 'lib/index.js',
-      name: isEsm ? '' : 'ElementPlus',
+      name: isEsm ? '' : 'QmUi',
       globals: isEsm ? {
         vue: "Vue" // 告诉rollup全局变量Vue即是vue
       } : ''
@@ -36,7 +36,7 @@ export default [
       esbuild(),
     ],
     external(id) {
-      console.log(id, /^vue/.test(id))
+      console.log(id, /^vue/.test(id));
       return /^vue$/.test(id);
     },
   },
