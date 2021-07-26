@@ -1,6 +1,6 @@
 {
   "name": "qm-ui",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A Component Library from qm",
   "private": true,
   "main": "lib/index.js",
@@ -16,7 +16,8 @@
     "build:esm-bundle": "cross-env LIBMODE=esm rollup --config ./build/rollup.config.bundle.js",
     "build:lib": "rollup --config ./build/rollup.config.bundle.js",
     "build:components": "rollup --config ./build/rollup.config.js",
-    "build:theme": "rimraf packages/theme-chalk/lib && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk && rimraf packages/theme-chalk/lib"
+    "build:theme": "rimraf packages/theme-chalk/lib && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk && rimraf packages/theme-chalk/lib",
+    "build:publish": "node ./build/publish.js"
   },
   "author": "",
   "license": "ISC",
