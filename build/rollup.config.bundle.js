@@ -12,11 +12,12 @@ import replace from '@rollup/plugin-replace';
 const isEsm = process.env.LIBMODE === 'esm';
 export default [
   {
-    input: path.resolve(__dirname, '../packages/qm-ui/index.js'),
+    input: path.resolve(__dirname, '../packages/mopower-ui/index.js'),
     output: {
       format: isEsm ? 'es' : 'iife',
       file: isEsm ? 'lib/index.esm.js' : 'lib/index.js',
-      name: isEsm ? '' : 'QmUi',
+      name: isEsm ? '' : 'MopowerUi',
+      exports: 'named',
       globals: isEsm ? {
         vue: "Vue" // 告诉rollup全局变量Vue即是vue
       } : ''
@@ -35,9 +36,9 @@ export default [
       }),
       esbuild(),
     ],
-    external(id) {
-      console.log(id, /^vue/.test(id));
-      return /^vue$/.test(id);
+    external (id) {
+      return /^vue$/.test(id)
+        || deps.some(k => new RegExp('^' + k).test(id));
     },
   },
 ];

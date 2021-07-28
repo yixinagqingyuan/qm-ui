@@ -1,23 +1,10 @@
 
-export interface ElMessageBox {
-  /** Show a message box */
-  (message: string, title?: string, type?: string): Promise<MessageBoxData>
+export interface MpPreview {
 
-  /** Show a message box */
-  (options: ElMessageBoxOptions): Promise<MessageBoxData>
-
-  /** Show an alert message box */
-  alert: ElMessageBoxShortcutMethod
-
-  /** Show a confirm message box */
-  confirm: ElMessageBoxShortcutMethod
-
-  /** Show a prompt message box */
-  prompt: ElMessageBoxShortcutMethod
-
-  /** Set default options of message boxes */
-  setDefaults(defaults: ElMessageBoxOptions): void
-
-  /** Close current message box */
-  close(): void
+}
+declare module 'vue/types/vue' {
+  interface Vue {
+    /** Used to show feedback after an activity. The difference with Notification is that the latter is often used to show a system level passive notification. */
+    $message: MpPreview
+  }
 }

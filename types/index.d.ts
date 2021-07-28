@@ -1,3 +1,3 @@
-export * from 'qm-ui'
-import * as QmUi from 'qm-ui'
-export default QmUi
+export * from './mopower-ui'
+import * as MpUi from './mopower-ui'
+export default MpUi

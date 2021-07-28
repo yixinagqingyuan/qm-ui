@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import entry from './pages/play';
-import qmui from 'qm-ui';
+import mpui from 'mopower-ui';
 import '../packages/theme-chalk/src/index.scss';
-Vue.use(qmui);
+Vue.use(mpui);
 new Vue({
   ...entry
 }).$mount('#app');
